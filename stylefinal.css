@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    top: 0;
+    right:0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+link[rel="shortcut icon"] {
+    /* Set the width and height to the desired size */
+    width: 500px;
+    height: 1000px;
+}
+
+
+header{
+    position: absolute;
+    top: 0;
+    Left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+ 
+}
+
+header.logo{
+    position: relative;
+    max-width: 80px;
+}
+header ul {
+    position: relative;
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    color: #333;
+    font-weight: 400px;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+/* CSS for hamburger icon */
+
+
+
+
+
+.content {
+    position: relative;
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.content .textbox {
+    position: relative;
+    max-width: 600px;
+}
+
+.content .textbox h2  {
+   color: #333;
+   font-size: 4em;
+   line-height: 1.4em;
+   font-weight: 500;
+}
+
+.content .textbox a  {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #015834;
+    color: white;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+ }
+ 
+ .content .MatchaBox {
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+    flex: 1 1 17rem;
+    margin-bottom: 10px;
+
+ }
+
+ .content .MatchaBox img {
+    max-width: 340px;
+  
+ }
+
+
+
+ .Coffee {
+    position: absolute;
+    left: 50%; 
+    bottom: 20px;
+    transform: translateX(-50%); 
+    display: flex;
+}
+
+
+
+
+.Coffee li {
+    list-style-type: none;
+    display:inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+   }
+
+.Coffee li :hover {
+    transform: translateY(-15px);
+   }
+
+   .Coffee li img {
+    max-width: 80px; 
+}
+
+.sci {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%); 
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a  {
+    display: inline-block;
+    margin: 5px 0;
+    transform:scale(0.6) ;
+}
+
+
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+.menu-wrapper .heading {
+    text-align: center; 
+    margin-bottom: 20px;
+    position: relative;
+    top: 50px;
+}
+
+.menu-container {
+    text-align: center;
+    padding: 50px; 
+}
+
+.menu-container .heading {
+    margin-bottom: 30px;
+}
+
+
+
+.heading{
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.heading span {
+    font-size: 1rem;
+    font-weight: 600;
+    color:black;
+    
+}
+
+.heading h1 {
+    font-size: 2rem;
+    color:#015834 ;
+}
+
+
+.shop-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 20px;
+    justify-content: center; 
+    align-items: center; 
+    
+    
+}
+
+.shop-container .box{
+    flex: 1 1 10rem;
+    background:#015834 ;
+    padding:20px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+   
+}
+
+
+.btn{
+    padding: 7px 16px;
+    border:2px solid rgb(14, 13, 13);
+    border-radius: 40px;
+    color: black;
+    font: weight 500px; ;
+}
+
+.shop-container .box .box-img {
+    width: 150px;
+    height: 150px;
+    margin-top: -100px;
+}
+
+
+.shop-container .box .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.shop-container .box .btn {
+    text-decoration: none;
+}
+
+.white-image {
+    filter: brightness(0) invert(100%);
+}
+
+.stars {
+    margin: 1rem 0 0.1rem;
+}
+
+.shop-container .box .stars .bx{
+    color: white;
+}
+
+.shop-container .box h2{
+    color: white;
+    font-size: 1.2rem;
+}
+
+.shop-container .box span {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0.2rem 0 0.5rem;
+}
+
+.box .btn {
+    border: 2px solid white;
+    color: white;
+}
+
+.box .btn:hover {
+   background: white;
+   color: #015834;
+}
+
+.white-image {
+    filter: brightness(0) invert(100%);
+}
+
+.delivery-img img {
+    max-width: 100%;
+    height: auto; 
+}
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    text-align: center; 
+  }
+  
+  .contact-img {
+    flex: 1; 
+    padding-top: 150px;
+  }
+  
+  .contact-text {
+    flex: 1; 
+    text-align: left;
+    padding-top: 200px;
+  }
+  
+  .contact-text h2 {
+    font-size: 1.2rem;
+    color: black;
+    padding-top: 150px;
+  }
+  
+  .contact-text p {
+    margin: 0.5rem 0 1rem;
+    text-align: justify;
+  }
+  
+  .contact-img img {
+    max-width: 100%;
+    padding-top: 350px;
+  }
+  
+  .btn {
+    text-decoration: none;
+  }
+
+
+
+  .about {
+    background-color: #f5f0e1; 
+    padding: 1.5rem;
+    border-radius: 8px; 
+}
+
+.about-content {
+    display: flex;
+    flex: 1;
+}
+
+.about-img {
+    flex: 0 0 17rem;
+}
+
+.about-text {
+    flex: 1;
+    padding-top: 80px;
+}
+
+.about-text h2 {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.about-text p {
+    margin: 0.5rem 0 1rem;
+    text-align: justify;
+}
+
+
+footer {
+    background-color: #015834;
+    color: white;
+    text-align: center;
+    padding: 20px 5%;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    border-bottom: 2px solid white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.menu-container, .delivery, .contact, .about {
+    padding: 30px 5%; 
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+    header {
+        padding: 20px 5%;
+    }
+
+}

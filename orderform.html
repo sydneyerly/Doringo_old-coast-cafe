@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="favicon.ico" >
+    <title>Old Coast Cafe Order Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: 50px auto 60px; 
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #015834;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f5f0e1;
+        }
+
+        footer {
+
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+      
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    
+    <section class="order-form">
+        <img src="ord logo.png" alt="Your Logo" class="logo" width="160" height="100">
+        <h2>Place Your Order</h2>
+        <form id="orderForm">
+            <label for="customerName">Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+
+            <label for="customerAddress">Address:</label>
+            <input type="text" id="customerAddress" name="customerAddress" required>
+
+            <label for="customerContact">Contact Number:</label>
+            <input type="tel" id="customerContact" name="customerContact" required>
+
+            <label for="coffeeType">Coffee Type:</label>
+            <select id="coffeeType" name="coffeeType" required>
+                <option value="" disabled selected hidden>Select Coffee Type</option>
+                <option value="strawberry">Strawberry</option>
+                <option value="matcha">Matcha</option>
+                <option value="nutellaespresso">Nutella Espresso</option>
+                <option value="cammmacghiato"> Caramel Macchiato</option>
+                <option value="mocha"> Cafe Mocha</option>
+                <option value="spanishlatte">Spanish Latte</option>
+                <option value="vanilla">Vanilla Latte</option>
+            </select>
+
+            <label for="coffeeQuantity">Quantity:</label>
+            <input type="number" id="coffeeQuantity" name="coffeeQuantity" min="1" required>
+
+            <button class="btn" type="button" onclick="submitOrder()">Order Now</button>
+
+            <p id="error-message" style="color: red; display: none;">Please fill in all required fields before submitting the order.</p>
+        </form>
+    </section>
+
+    <!-- Your JavaScript code for handling the order submission -->
+    <script>
+        function submitOrder() {
+            const customerName = document.getElementById('customerName').value;
+            const customerAddress = document.getElementById('customerAddress').value;
+            const customerContact = document.getElementById('customerContact').value;
+            const coffeeType = document.getElementById('coffeeType').value;
+            const coffeeQuantity = document.getElementById('coffeeQuantity').value;
+
+            // Check for blank values in the required fields
+            if (customerName.trim() === "" || customerAddress.trim() === "" || customerContact.trim() === "" || coffeeType.trim() === "") {
+                // Display an error message if any required field is blank
+                document.getElementById('error-message').style.display = 'block';
+                return;
+            }
+
+            // Hide the error message if all required fields are filled
+            document.getElementById('error-message').style.display = 'none';
+
+            // Open a new window with order details
+            const orderDetailsWindow = window.open('', '_blank');
+            orderDetailsWindow.document.write(`
+                <h2>Order Details</h2>
+                <p><strong>Name:</strong> ${customerName}</p>
+                <p><strong>Address:</strong> ${customerAddress}</p>
+                <p><strong>Contact Number:</strong> ${customerContact}</p>
+                <p><strong>Coffee Type:</strong> ${coffeeType}</p>
+                <p><strong>Quantity:</strong> ${coffeeQuantity}</p>
+                <p>Thank you for your order!</p>
+            `);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to parse the URL query parameters
+            function getQueryParams(url) {
+                const params = {};
+                const queryString = url.split('?')[1];
+
+                if (queryString) {
+                    const keyValuePairs = queryString.split('&');
+                    keyValuePairs.forEach(pair => {
+                        const [key, value] = pair.split('=');
+                        params[key] = decodeURIComponent(value);
+                    });
+                }
+
+                return params;
+            }
+
+            // Function to display the order summary
+            function displayOrderSummary() {
+                const orderList = document.getElementById('orderList');
+                const queryParams = getQueryParams(window.location.href);
+
+                if (queryParams.cart) {
+                    const cartItems = JSON.parse(decodeURIComponent(queryParams.cart));
+
+                    cartItems.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `${item.productName} - ${item.price}`;
+                        orderList.appendChild(listItem);
+                    });
+                }
+            }
+
+            // Call the function to display the order summary
+            displayOrderSummary();
+        });
+
+
+    </script>
+    
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Doringo Sydney. All rights reserved.</p>
+           
+    </footer>
+
+</body>
+
+</html>
