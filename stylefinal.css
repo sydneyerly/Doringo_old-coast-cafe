@@ -64,26 +64,6 @@ header ul li a {
 /* CSS for hamburger icon */
 
 
-.hamburger-icon {
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.hamburger-icon span {
-    width: 20px; 
-    height: 2px; 
-    background-color: black;
-    margin: 2px 0; 
-}
-
-
-
 
 
 
